@@ -1,0 +1,16 @@
+experiment_name: "acoustic_benchmark_emotion2vec"
+domain: "acoustic_edge_evaluation"
+device: "cuda"
+
+# Data & Batching
+dataset_path: "src/data/chalearn/chalearn_multimodal_benchmark_noisy.csv"
+batch_size: 20
+
+# Model Definition
+architecture: "emotion2vec+"
+model_id: "iic/emotion2vec_plus_large"
+target_sample_rate: 16000
+
+# File I/O & Checkpointing
+checkpoint_path: "src/results/acoustic/checkpoints/emotion2vec_checkpoint.json"
+output_csv: "src/results/acoustic/emotion2vec_evaluation.csv"

@@ -1,0 +1,14 @@
+domain: "facial_and_gaze"
+device: "cuda"
+
+model_config:
+  architecture_name: "GazeTR-Hybrid"
+  weights_path: "src/models/weights/GazeTR-H-ETH.pt"
+  batch_size: 32
+
+data_config:
+  manifest_path: "src/data/vision/manifest.csv"
+
+evaluation:
+  output_results_path: "src/results/vision/gazetr_results.csv"
+  checkpoint_interval: 100

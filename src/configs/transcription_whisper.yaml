@@ -1,0 +1,21 @@
+experiment_name: "transcription_benchmark_whisper"
+domain: "transcription"
+
+device: "gpu"
+
+model_config:
+  architecture: "whisper-large-v3"
+  framework: "huggingface"
+  precision: "fp16"
+
+data_config:
+  manifest_path: "src/data/transcription/benchmark_disfluency/benchmark_manifest.csv"
+  batch_size: 4
+  sample_rate: 16000
+  chunk_save_frequency: 20
+
+evaluation:
+  primary_metric: "WER"
+  preserve_disfluencies: true
+  checkpoint_path: "src/results/checkpoints/whisper_checkpoint.json"
+  output_results_path: "src/results/transcription_whisper_results.csv"

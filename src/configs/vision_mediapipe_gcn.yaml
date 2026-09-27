@@ -1,0 +1,19 @@
+domain: "skeletal_kinematics"
+device: "cuda"
+
+model_config:
+  architecture: "mediapipe_gcn"
+  gcn_weights_path: "src/models/weights/planar_lifting_gcn.pt"
+  target_resolution: 224
+  margin: 20
+
+data_config:
+  manifest_path: "src/data/vision/manifest.csv"
+  batch_size: 1
+
+evaluation:
+  output_results_path: "src/results/vision/mediapipe_gcn_results.csv"
+  min_cutoff: 1.0
+  beta: 0.004
+  d_cutoff: 1.0
+  checkpoint_interval: 20

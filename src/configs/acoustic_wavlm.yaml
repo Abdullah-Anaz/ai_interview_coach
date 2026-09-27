@@ -1,0 +1,16 @@
+experiment_name: "acoustic_benchmark_emotion2vec"
+domain: "acoustic_edge_evaluation"
+device: "cuda"
+
+# Data & Batching
+dataset_path: "src/data/chalearn/chalearn_multimodal_benchmark_noisy.csv"
+batch_size: 20
+
+# Model Definition
+architecture: "wavlm"
+model_id: "microsoft/wavlm-large"
+target_sample_rate: 16000
+
+# File I/O & Checkpointing
+checkpoint_path: "src/results/acoustic/checkpoints/wavlm_checkpoint.json"
+output_csv: "src/results/acoustic/wavlm_evaluation.csv"

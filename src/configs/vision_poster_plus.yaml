@@ -1,0 +1,19 @@
+# Target execution hardware ("cuda", "cpu", or leave empty to use CLI global device)
+domain: "facial_and_gaze"
+device: "cuda"
+
+# Adapter and POSTER++ architecture parameters
+model_config:
+  architecture_name: "POSTER++"
+  poster_weights_path: "src/models/weights/poster_plus_latent.pth"
+  feature_dim: 1024
+  inference_batch_size: 16
+
+# Input dataset parameters
+data_config:
+  manifest_path: "src/data/vision/manifest.csv"
+
+# Orchestrator and output parameters
+evaluation:
+  output_results_path: "src/results/vision/facial_poster_results.csv"
+  checkpoint_interval: 20
