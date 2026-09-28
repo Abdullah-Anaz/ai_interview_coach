@@ -1,3 +1,3 @@
-src: Evaluation Pipeline
-app: Backend
-frontend: Frontend
+* **src:** Evaluation Pipeline
+* **app:** Backend
+* **frontend:** Frontend
